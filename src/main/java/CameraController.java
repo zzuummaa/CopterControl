@@ -11,7 +11,7 @@ import javafx.scene.media.MediaView;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CameraController {
+public class CameraController implements Controlable {
 
     @FXML
     private ListView<String> lvCamers;
@@ -21,8 +21,12 @@ public class CameraController {
 
     private Map<String, String> camerasURLs;
 
+    private Map<String, MediaPlayer> mediaPlayers;
+
     public void initialize() {
         System.out.println("Camera init");
+
+        mediaPlayers = new HashMap<>();
 
         camerasURLs = new HashMap<>();
         camerasURLs.put("Oracle example", "http://download.oracle.com/otndocs/products/javafx/oow2010-2.flv");
@@ -35,11 +39,30 @@ public class CameraController {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 System.out.println("List view item selected: " + newValue);
-                String streamURL = camerasURLs.get(newValue);
-                MediaPlayer mediaPlayer = new MediaPlayer(new Media(streamURL));
-                mediaPlayer.setAutoPlay(true);
+
+                MediaPlayer mediaPlayer;
+                if (mediaPlayers.containsKey(newValue)) {
+                    mediaPlayer = mediaPlayers.get(newValue);
+                } else {
+                    String streamURL = camerasURLs.get(newValue);
+                    mediaPlayer = new MediaPlayer(new Media(streamURL));
+                    mediaPlayers.put(newValue, mediaPlayer);
+                }
+
+                mediaPlayer.play();
+                mediaView.getMediaPlayer().stop();
                 mediaView.setMediaPlayer(mediaPlayer);
             }
         });
+    }
+
+    @Override
+    public void add() {
+
+    }
+
+    @Override
+    public void remove() {
+        mediaView.getMediaPlayer().stop();
     }
 }

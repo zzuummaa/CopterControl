@@ -4,28 +4,59 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="WeatherController">
-   <padding>
-      <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
-   </padding>
+<AnchorPane fx:id="apWeather" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="WeatherController">
    <children>
-      <VBox prefHeight="200.0" prefWidth="100.0">
+      <Pane prefHeight="525.0" prefWidth="1024.0">
          <children>
-            <HBox>
+            <VBox layoutX="429.0" layoutY="255.0">
                <children>
-                  <Label text="Температура: " />
-                  <Label fx:id="lbWhether" text="10°" />
+                  <HBox>
+                     <children>
+                        <Label text="Температура: ">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbWhether" text="10°">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <Label text="Сила ветра: ">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbWind" text="0км/ч">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <Label fx:id="lbStatus" text="Взлет разрешен">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
                </children>
-            </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Label text="Сила ветра: " />
-                  <Label fx:id="lbWind" text="0км/ч" />
-               </children>
-            </HBox>
+            </VBox>
          </children>
-      </VBox>
+      </Pane>
    </children>
 </AnchorPane>

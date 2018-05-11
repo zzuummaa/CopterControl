@@ -2,6 +2,7 @@ import com.jsoniter.JsonIterator;
 import com.jsoniter.any.Any;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -9,27 +10,35 @@ import okhttp3.Response;
 import java.io.IOException;
 import java.util.Map;
 
-public class WeatherController {
+public class WeatherController implements Controlable {
     @FXML
     private Label lbWhether;
 
     @FXML
     private Label lbWind;
 
+    @FXML
+    private Label lbStatus;
+
+    @FXML
+    private AnchorPane apWeather;
+
     public void initialize() {
         System.out.println("Wether init");
-        WhetherData whetherData = requestWhether();
-        if (whetherData != null) {
-            lbWhether.setText(String.valueOf(whetherData.tempC) + "°");
+        WeatherData weatherData = requestWhether();
+        if (weatherData != null) {
+            lbWhether.setText(String.valueOf(weatherData.tempC) + "°");
+            lbWind.setText(String.valueOf(weatherData.windKPH) + "км/ч");
+            lbStatus.setText(weatherData.windKPH > 10 ? "Взлет запрещен" : "Взлет разрешен");
         }
     }
 
-    static class WhetherData {
+    static class WeatherData {
         int tempC;
         int windKPH;
     }
 
-    protected WhetherData requestWhether() {
+    protected WeatherData requestWhether() {
         OkHttpClient client = new OkHttpClient();
 
         String url = "http://api.apixu.com/v1/current.json?key=caf69d49731b4e5f904234420181005&q=Moscow";
@@ -38,7 +47,7 @@ public class WeatherController {
                 .build();
 
         Response response = null;
-        WhetherData data = new WhetherData();
+        WeatherData data = new WeatherData();
         try {
             response = client.newCall(request).execute();
             String strResp = response.body().string();
@@ -53,5 +62,15 @@ public class WeatherController {
         }
 
         return data;
+    }
+
+    @Override
+    public void add() {
+
+    }
+
+    @Override
+    public void remove() {
+
     }
 }

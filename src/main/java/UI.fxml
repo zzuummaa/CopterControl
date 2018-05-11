@@ -11,7 +11,7 @@
 
 <AnchorPane fx:id="parent" prefHeight="600" prefWidth="1024.0" styleClass="parent" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UIController">
     <children>
-        <VBox layoutX="300.0" prefHeight="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <VBox fillWidth="true" layoutX="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="1024.0" style="-fx-background-color :#00A2D3;">
                     <effect>
@@ -75,7 +75,7 @@
                   <Insets />
                </VBox.margin>
                 </Pane>
-            <AnchorPane fx:id="contentPane" id="contentPane" prefHeight="600.0" />
+            <AnchorPane id="contentPane" fx:id="contentPane" prefHeight="525.0" />
             </children>
         </VBox>
     </children>

@@ -15,7 +15,6 @@ public class Launch extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("UI.fxml"));
 
         Scene scene = new Scene(root);
-        AnchorPane contentPane = (AnchorPane) scene.lookup("#contentPane");
 
         stage.setScene(scene);
         stage.initStyle(StageStyle.UNDECORATED);
