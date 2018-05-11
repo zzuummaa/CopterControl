@@ -32,6 +32,19 @@ public class CameraController implements Controlable {
         camerasURLs.put("Oracle example", "http://download.oracle.com/otndocs/products/javafx/oow2010-2.flv");
         camerasURLs.put("Some strange source", "https://www.rmp-streaming.com/media/bbb-360p.mp4");
 
+        camerasURLs.put("Oracle example1", "http://download.oracle.com/otndocs/products/javafx/oow2010-2.flv");
+        camerasURLs.put("Some strange source1", "https://www.rmp-streaming.com/media/bbb-360p.mp4");
+        camerasURLs.put("Oracle example2", "http://download.oracle.com/otndocs/products/javafx/oow2010-2.flv");
+        camerasURLs.put("Some strange source2", "https://www.rmp-streaming.com/media/bbb-360p.mp4");
+        camerasURLs.put("Oracle example3", "http://download.oracle.com/otndocs/products/javafx/oow2010-2.flv");
+        camerasURLs.put("Some strange source3", "https://www.rmp-streaming.com/media/bbb-360p.mp4");
+        camerasURLs.put("Oracle example4", "http://download.oracle.com/otndocs/products/javafx/oow2010-2.flv");
+        camerasURLs.put("Some strange source4", "https://www.rmp-streaming.com/media/bbb-360p.mp4");
+        camerasURLs.put("Oracle example5", "http://download.oracle.com/otndocs/products/javafx/oow2010-2.flv");
+        camerasURLs.put("Some strange source5", "https://www.rmp-streaming.com/media/bbb-360p.mp4");
+        camerasURLs.put("Oracle example6", "http://download.oracle.com/otndocs/products/javafx/oow2010-2.flv");
+        camerasURLs.put("Some strange source6", "https://www.rmp-streaming.com/media/bbb-360p.mp4");
+
         ObservableList<String> items = FXCollections.observableArrayList (camerasURLs.keySet());
         lvCamers.setItems(items);
 

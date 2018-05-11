@@ -29,7 +29,7 @@ public class WeatherController implements Controlable {
         if (weatherData != null) {
             lbWhether.setText(String.valueOf(weatherData.tempC) + "°");
             lbWind.setText(String.valueOf(weatherData.windKPH) + "км/ч");
-            lbStatus.setText(weatherData.windKPH > 10 ? "Взлет запрещен" : "Взлет разрешен");
+            lbStatus.setText(weatherData.windKPH > 36 ? "Взлет запрещен" : "Взлет разрешен");
         } else {
             lbStatus.setText("Нет связи с сервисом погоды");
         }

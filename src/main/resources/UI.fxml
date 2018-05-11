@@ -75,7 +75,7 @@
                   <Insets />
                </VBox.margin>
                 </Pane>
-            <AnchorPane id="contentPane" fx:id="contentPane" prefHeight="525.0" />
+            <AnchorPane id="contentPane" fx:id="contentPane" maxHeight="525.0" prefHeight="525.0" />
             </children>
         </VBox>
     </children>
